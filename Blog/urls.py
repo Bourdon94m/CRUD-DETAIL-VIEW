@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-from .views import BlogPostIndexView, BlogPostCreateView, BlogPostDetailView, BlogPostUpdateView
+from .views import BlogPostIndexView, BlogPostCreateView, BlogPostDetailView, BlogPostUpdateView, BlogPostDeleteView
 
 
 urlpatterns = [
@@ -24,4 +24,5 @@ urlpatterns = [
     path('creates/', BlogPostCreateView.as_view(), name="creates"),
     path('details/<int:pk>/', BlogPostDetailView.as_view(), name='informations'),
     path('details/<int:pk>/edit', BlogPostUpdateView.as_view(), name='informations-edit'),
+    path('delete/', BlogPostDeleteView.as_view(), name="informations-delete")
 ]

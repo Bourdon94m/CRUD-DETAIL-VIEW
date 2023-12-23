@@ -1,22 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Bienvenue sur mon Blog !</h1>
-
+  </head>
+  <body style="max-height: 400vh; height: 400vh; align-items: center; display: flex; justify-content: center;">
     {% for post in posts %}
-        
-        <a href="{% url 'informations' pk=post.pk %}">
-            <h1>{{ post.title }}</h1>
-        </a>
-        <h2>{{ post.content }}</h2>
+    <br /><br />
+    <div
+      class="relative flex w-80 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
+    >
+      <div
+        class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600"
+      ></div>
+      <div class="p-6">
+        <h5
+          class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased"
+        >
+          {{ post.title }}
+        </h5>
+        <p
+          class="block font-sans text-base font-light leading-relaxed text-inherit antialiased"
+        >
+          {{ post.content }}
+        </p>
+      </div>
+      <div class="p-6 pt-0">
+        <button
+          data-ripple-light="true"
+          type="button"
+          class="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          <a href="{% url 'informations' pk=post.pk %}">Read More</a>
+        </button>
+      </div>
+    </div>
     {% endfor %}
 
-    <a href="{% url 'creates' %}">Create Articles</a>
+    <button
+  class="relative px-8 py-2 rounded-md bg-white isolation-auto z-10 border-2 border-lime-500 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-lime-500 before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700">
+  <a href="{% url 'creates' %}">Hover Me</a>
+</button>
 
-</body>
+  
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </body>
 </html>

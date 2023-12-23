@@ -10,6 +10,7 @@
     <h1>Author : {{ detail.author }}</h1>
     <h1>Title : {{ detail.title }}</h1>
     <h1>Content : {{ detail.content }}</h1>
-    
+    <a href="{% url 'informations-delete' pk=detail.pk %}">Supprimer l'article</a>
+    <a href="{% url 'index' %}">return Home</a>
 </body>
 </html>

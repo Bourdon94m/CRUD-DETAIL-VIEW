@@ -23,4 +23,5 @@ urlpatterns = [
     path('creates/', include('Blog.urls',)),
     path('details/', include('Blog.urls',)),
     path('details/edit/', include('Blog.urls',)),
+    path('delete/', include('Blog.urls',)),
 ]

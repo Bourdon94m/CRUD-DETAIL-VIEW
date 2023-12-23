@@ -1,3 +1,4 @@
+from typing import Any
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView, DeleteView, DetailView, ListView, UpdateView
@@ -16,6 +17,12 @@ class BlogPostCreateView(CreateView):
     template_name = 'members/creates.html'
     fields = '__all__'
     success_url = reverse_lazy('index')
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context["submit_text"] = "Créer"
+        return context
+    
     
     
     
@@ -30,7 +37,14 @@ class BlogPostUpdateView(UpdateView):
     model = BlogPost
     fields = '__all__'
     template_name = "members/creates.html"
-    success_url = 'index'
-   
-   
+    success_url = '/'
+                
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context["submit_text"] = "Modifier"
+        return context
 
+
+class BlogPostDeleteView(DeleteView):
+    model = BlogPost
+    template_name = 'delete'

@@ -6,15 +6,12 @@
     <title>Document</title>
 </head>
 <body>
+
+    <a href="{% url 'index' %}">Home</a>
     <form action="" method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
-
-        <button type="submit">{{ submit_text }}</button>
-    
-
+        <p>Voulez vous supprimez "{{ blogpost.title }}" ?</p>
+        <input type="submit" value="Supprimer">
     </form>
-    
-    
 </body>
 </html>
