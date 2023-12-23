@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 from .views import BlogPostIndexView, BlogPostCreateView, BlogPostDetailView
+
+
 urlpatterns = [
     path('', BlogPostIndexView.as_view(), name='index'),
     path('creates/', BlogPostCreateView.as_view(), name="creates"),

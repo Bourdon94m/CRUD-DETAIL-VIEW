@@ -8,12 +8,12 @@
 <body>
     <h1>Bienvenue sur mon Blog !</h1>
 
-    {% for posts in posts %}
+    {% for post in posts %}
         
-        <a href="{% url 'informations' %}">
-            <h1>{{ posts.title }}</h1>
+        <a href="{% url 'informations' pk=post.pk %}">
+            <h1>{{ post.title }}</h1>
         </a>
-        <h2>{{ posts.content }}</h2>
+        <h2>{{ post.content }}</h2>
     {% endfor %}
 
     <a href="{% url 'creates' %}">Create Articles</a>

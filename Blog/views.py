@@ -19,7 +19,7 @@ class BlogPostCreateView(CreateView):
     
 
 class BlogPostDetailView(DetailView):
-    queryset = BlogPost.objects.all()
+    model = BlogPost
     template_name = 'members/detail.html'
     context_object_name = 'detail'
 
