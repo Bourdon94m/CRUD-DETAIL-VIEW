@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="{% url 'informations-edit' pk=detail.pk %}">Modifier l'article</a>
     <h1>Author : {{ detail.author }}</h1>
     <h1>Title : {{ detail.title }}</h1>
     <h1>Content : {{ detail.content }}</h1>

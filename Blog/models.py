@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -10,5 +11,4 @@ class BlogPost(models.Model):
     author = models.CharField(max_length=20)
     content = models.TextField()
     isPublished= models.BooleanField(default=False)
-
 
