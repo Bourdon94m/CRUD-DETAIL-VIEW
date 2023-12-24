@@ -19,10 +19,11 @@ from django.urls import path, re_path
 from .views import BlogPostIndexView, BlogPostCreateView, BlogPostDetailView, BlogPostUpdateView, BlogPostDeleteView
 
 
+
 urlpatterns = [
     path('', BlogPostIndexView.as_view(), name='index'),
     path('creates/', BlogPostCreateView.as_view(), name="creates"),
     path('details/<int:pk>/', BlogPostDetailView.as_view(), name='informations'),
     path('details/<int:pk>/edit', BlogPostUpdateView.as_view(), name='informations-edit'),
-    path('delete/', BlogPostDeleteView.as_view(), name="informations-delete")
+    path('details/<int:pk>/delete', BlogPostDeleteView.as_view(), name="informations-delete"),
 ]
